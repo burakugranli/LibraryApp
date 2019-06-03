@@ -1,0 +1,33 @@
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/BookStoreDB
+    username: postgres
+    password: postgre
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+  application:
+    name: reservation-service
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    cache: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - info
+        - health
+
+
+
